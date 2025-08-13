@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SkibidiBnb.Domain.IRepositories;
+using SkibidiBnb.Application.Interfaces.IRepositories;
 using SkibidiBnb.Infrastructure.Repositories;
 
 namespace SkibidiBnb.Infrastructure

@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using SkibidiBnb.Application.Common;
-using SkibidiBnb.Application.DTO.Property;
-using SkibidiBnb.Application.Interfaces;
-using SkibidiBnb.Application.Services.UploadCloudServices;
+using SkibidiBnb.Application.Features.Property.DTOs;
+using SkibidiBnb.Application.Features.Property.Services;
+using SkibidiBnb.Application.SharedServices.UploadCloud;
 
 namespace SkibidiBnb.Api.Apis
 {

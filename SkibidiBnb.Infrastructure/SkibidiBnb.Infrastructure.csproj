@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SkibidiBnb.Domain\SkibidiBnb.Domain.csproj" />
+    <ProjectReference Include="..\SkibidiBnb.Application\SkibidiBnb.Application.csproj" />
   </ItemGroup>
 
 </Project>

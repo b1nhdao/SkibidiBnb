@@ -1,16 +1,11 @@
 ﻿using System.Text;
 using CloudinaryDotNet;
-using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SkibidiBnb.Application;
-using SkibidiBnb.Domain.IRepositories;
 using SkibidiBnb.Infrastructure;
 using SkibidiBnb.Infrastructure.Data;
-using SkibidiBnb.Infrastructure.Repositories;
-
 
 namespace SkibidiBnb.Api.Bootstrapping
 {
@@ -51,12 +46,12 @@ namespace SkibidiBnb.Api.Bootstrapping
             });
 
             // Cloudinary configuration
-            Account account = new Account(
+            Account account = new(
                 builder.Configuration["Cloudinary:CloudName"],
                 builder.Configuration["Cloudinary:ApiKey"],
                 builder.Configuration["Cloudinary:ApiSecret"]);
 
-            Cloudinary cloudinary = new Cloudinary(account);
+            Cloudinary cloudinary = new (account);
             cloudinary.Api.Secure = true;
             
             builder.Services.AddSingleton(cloudinary);

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SkibidiBnb.Application.Interfaces.IRepositories;
 using SkibidiBnb.Domain.Entities;
-using SkibidiBnb.Domain.IRepositories;
 using SkibidiBnb.Infrastructure.Data;
 
 namespace SkibidiBnb.Infrastructure.Repositories

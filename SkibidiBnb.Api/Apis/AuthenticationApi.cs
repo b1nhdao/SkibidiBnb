@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
-using SkibidiBnb.Application.DTO.Authentication;
-using SkibidiBnb.Application.DTO.User;
-using SkibidiBnb.Application.Features;
-using SkibidiBnb.Application.Interfaces;
+using SkibidiBnb.Application.Features.Authentication.DTOs;
+using SkibidiBnb.Application.Features.Authentication.Services;
+using SkibidiBnb.Application.Features.User.DTOs;
+using SkibidiBnb.Application.Features.User.Services;
 
 namespace SkibidiBnb.Api.Apis
 {
@@ -31,7 +30,7 @@ namespace SkibidiBnb.Api.Apis
             {
                 return TypedResults.BadRequest("User creation failed.");
             }
-            return TypedResults.Ok(result);
+            return TypedResults.Ok(result.Value);
         }
 
         private static async Task<Results<Ok<LoginResponseDTO>, BadRequest<string>>> LogInAsync(LoginRequestDTO model, IAuthenticationService authenticationService)

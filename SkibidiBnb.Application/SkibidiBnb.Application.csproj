@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ViewModels\PropertyVM\" />
+    <Folder Include="Features\PropertyImage\DTOs\" />
+    <Folder Include="Features\PropertyImage\Services\" />
   </ItemGroup>
 
 </Project>

@@ -1,19 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SkibidiBnb.Domain.IRepositories;
+using SkibidiBnb.Application.Interfaces.IRepositories;
 using SkibidiBnb.Infrastructure.Data;
 
 namespace SkibidiBnb.Infrastructure.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity>(SkibidiBnbDbContext dbContext) : IGenericRepository<TEntity> where TEntity : class
     {
-        public readonly DbSet<TEntity> _dbSet;
-        public readonly SkibidiBnbDbContext _context;
-
-        public GenericRepository(SkibidiBnbDbContext dbContext)
-        {
-            _dbSet = dbContext.Set<TEntity>();
-            _context = dbContext;
-        }
+        public readonly DbSet<TEntity> _dbSet = dbContext.Set<TEntity>();
+        public readonly SkibidiBnbDbContext _context = dbContext;
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
